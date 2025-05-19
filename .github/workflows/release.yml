@@ -1,0 +1,34 @@
+name: Orthodox IDE CI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.2'
+          modules: 'qtbase'
+
+      - name: Build Orthodox IDE
+        run: |
+          qmake OrthodoxIDE.pro
+          mingw32-make
+          mkdir release
+          copy build\\OrthodoxIDE.exe release\\
+          copy build\\OrthodoxLauncher.exe release\\
+          copy README.md press-kit.md release\\
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            release/*
