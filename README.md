@@ -27,8 +27,6 @@ OrthodoxIDE_Qt_Starter.zip ← Source + Build + Docs
 - NASM + GCC (for `.asm` output linkage)
 
 
-[![Gitpod — Online IDE For GitHub – Gitpod – Medium](https://tse4.mm.bing.net/th?id=OIP.prlSoCNmIHV7s90LkTdU3QHaEQ\&pid=Api)](https://medium.com/gitpod/gitpod-gitpod-online-ide-for-github-6296b907a886)
-
 The GitHub repository [JoeySoprano420/orthodox-ide](https://github.com/JoeySoprano420/orthodox-ide) is a comprehensive project that embodies a unique fusion of programming, philosophy, and narrative design. It serves as the official development environment for the Orthodox Programming Language (OPL), a symbolic, proof-first language deeply rooted in the Violet Aura Creations Universe (VACU).
 
 ---
