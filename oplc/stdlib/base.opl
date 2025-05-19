@@ -1,0 +1,11 @@
+
+@truth(ONE) = 1;
+@truth(ZERO) = 0;
+
+!resolver double(|x|) = |x| * 2;
+!resolver confirm(|x|) = (|x| >= 0x10);
+
+::macro[payload_fire] {
+    mov rax, 0x1337;
+    int 0x80;
+}

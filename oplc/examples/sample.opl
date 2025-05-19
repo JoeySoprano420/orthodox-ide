@@ -1,0 +1,18 @@
+
+@truth(axiom) = 0x1F;
+@state(current) := derive(@axiom);
+@modifier(strict) ~ enforce(@state);
+
+{
+    !declare |α| = 12;
+    !resolve |β| = double(|α|);
+    !proof @result := confirm(|β| > 20);
+    !commit @result;
+}
+
+⛓commit_path {
+    if (@result == true) {
+        ::emit_hex(0xC4);
+        ::invoke[routine: payload_fire];
+    }
+}
